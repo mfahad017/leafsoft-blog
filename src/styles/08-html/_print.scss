@@ -1,0 +1,28 @@
+@media print {
+
+  @page {
+    margin: 2cm 1cm;
+  }
+
+  body {
+    display: block;
+  }
+
+  img {
+    page-break-inside: avoid;
+  }
+
+  p a[href]:after {
+    content: ' (' attr(href) ')';
+  }
+
+  footer,
+  iframe,
+  .l-page-sidebar-second,
+  .help-widget,
+  .o-pre-footer,
+  .o-page-header,
+  .a-youtube {
+    display: none !important;
+  }
+}

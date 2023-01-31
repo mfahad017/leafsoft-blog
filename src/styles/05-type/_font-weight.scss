@@ -1,0 +1,27 @@
+/*
+* These values form an ordered sequence, where each number indicates a weight that is at least as dark as its predecessor. These roughly correspond to the commonly used weight names below:
+* 100 - Thin
+* 200 - Extra Light
+* 300 - Light
+* 400 - Regular
+* 500 - Medium
+* 600 - Semi Bold
+* 700 - Bold
+* 800 - Extra Bold
+* 900 - Black
+*
+* More details please read the specification on W3 website:
+* https://www.w3.org/TR/css-fonts-3/#propdef-font-weight
+*/
+
+// Namespace to make it easier to remember for our fine devs!
+// Namespace to make it easier to remember for our fine devs!
+$fw-thin: 100;
+$fw-extra-light: 200;
+$fw-light: 300;
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-semi-bold: 600;
+$fw-bold: 700;
+$fw-extra-bold: 800;
+$fw-black: 900;

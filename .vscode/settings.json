@@ -1,7 +1,5 @@
 {
-  "cSpell.words": [
-    "leafsoft"
-  ],
+  "cSpell.words": ["leafsoft", "nextjs"],
   "typescript.tsdk": "node_modules/typescript/lib",
   "typescript.enablePromptUseWorkspaceTsdk": true
 }

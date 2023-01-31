@@ -1,0 +1,158 @@
+// Breakpoints Variables
+
+// Breakpoints map
+$breakpoints: (
+  xxsm: rem(360px),
+  xsm: rem(480px),
+  sm: rem(768px),
+  md: rem(1024px),
+  lg: rem(1366px),
+  xl: rem(1920px),
+);
+
+// Containers max width
+$container-max-width: (
+  col1: rem(98.333px),
+  col2: rem(196.666px),
+  col3: rem(295px),
+  col4: rem(393.333px),
+  col5: rem(491.666px),
+  col6: rem(590px),
+  col7: rem(688.333px),
+  col8: rem(786.666px),
+  col9: rem(885px),
+  col10: rem(983.333px),
+  col11: rem(1081.666px),
+  col12: rem(1180px),
+);
+
+// Bottom padding
+$container-bottom: $spacing-xxl;
+
+// Breakpoint mixins
+
+// Media query min
+@mixin media-bp-min($mq-breakpoint, $mq-breakpoints: $breakpoints) {
+  // If $mq-breakpoint is a key that exists in
+  // $mq-breakpoints, get and use the value
+  @if map-has-key($mq-breakpoints, $mq-breakpoint) {
+    $mq-breakpoint: map-get($mq-breakpoints, $mq-breakpoint);
+  }
+
+  @media (min-width: #{$mq-breakpoint}) {
+    @content;
+  }
+}
+
+// Media query max
+@mixin media-bp-max($mq-breakpoint, $mq-breakpoints: $breakpoints) {
+  // If $mq-breakpoint is a key that exists in
+  // $mq-breakpoints, get and use the value
+  @if map-has-key($mq-breakpoints, $mq-breakpoint) {
+    $mq-breakpoint: map-get($mq-breakpoints, $mq-breakpoint);
+  }
+
+  @media (max-width: calc(#{$mq-breakpoint} - .0625rem)) {
+    @content;
+  }
+}
+
+// Media query between
+@mixin media-bp-between($min-mq-breakpoint, $max-mq-breakpoint, $mq-breakpoints: $breakpoints) {
+  // If $min-mq-breakpoint is a key that exists in
+  // $mq-breakpoints, get and use the value
+  @if map-has-key($mq-breakpoints, $min-mq-breakpoint) {
+    $min-mq-breakpoint: map-get($mq-breakpoints, $min-mq-breakpoint);
+  }
+
+  // If $max-mq-breakpoint is a key that exists in
+  // $mq-breakpoints, get and use the value
+  @if map-has-key($mq-breakpoints, $max-mq-breakpoint) {
+    $max-mq-breakpoint: map-get($mq-breakpoints, $max-mq-breakpoint);
+  }
+
+  @media (min-width: #{$min-mq-breakpoint}) and (max-width: calc(#{$max-mq-breakpoint} - .0625rem)) {
+    @content;
+  }
+}
+
+// Container mixin
+@mixin container($padding: true, $padding-mobile: true, $col: col12) {
+  @include media-bp-min(lg) {
+    $container-width: map-get($container-max-width, $col);
+    @if ($padding == true) {
+      max-width: calc(#{$container-width} + 5rem);
+    } @else {
+      max-width: $container-width;
+    }
+  }
+
+  @include container-padding($padding, $padding-mobile);
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+@mixin container-padding($padding: true, $padding-mobile: true) {
+  @if ($padding == true) {
+    @include media-bp-min(md) {
+      padding-left: $spacing-l;
+      padding-right: $spacing-l;
+    }
+  }
+
+  @if ($padding-mobile == true) {
+    @include media-bp-max(md) {
+      padding-left: $spacing-m;
+      padding-right: $spacing-m;
+    }
+  } @else {
+    padding: 0;
+  }
+}
+
+@mixin flex-gap($gap) {
+  display: flex;
+  flex-wrap: wrap;
+  margin: calc(-1 * #{$gap}) 0 0 calc(-1 * #{$gap});
+  width: calc(100% + #{$gap});
+
+  > * {
+    margin: #{$gap} 0 0 #{$gap};
+  }
+}
+
+@mixin collection-list {
+  @include media-bp-min(md) {
+    grid-gap: su(2);
+  }
+
+  display: grid;
+  grid-gap: su(1);
+  grid-template-columns: 1fr;
+}
+
+@mixin grid-layout {
+  @include media-bp-min(xxsm) {
+    grid-template-columns: repeat(auto-fill, minmax(325px, 1fr));
+  }
+
+  @include collection-list;
+  grid-auto-rows: 1fr;
+}
+
+@mixin small-grid-layout {
+  @include media-bp-min(xsm) {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+
+  @include collection-list;
+}
+
+@mixin grid-layout-50-50 {
+  @include media-bp-min(xsm) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include collection-list;
+}

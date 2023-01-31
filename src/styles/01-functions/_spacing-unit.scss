@@ -1,0 +1,31 @@
+// Spacing list from Figma.
+$spacing-xxs: rem(8px); // ratio 1
+$spacing-xs: rem(16px); // ratio 2
+$spacing-s: rem(24px); // ratio 3
+$spacing-m: rem(32px); // ratio 4
+$spacing-l: rem(40px); // ratio 5
+$spacing-xl: rem(48px); // ratio 6
+$spacing-xxl: rem(56px); // ratio 7
+$spacing-s-max: rem(64px); // ratio 8
+$spacing-m-max: rem(72px); // ratio 9
+$spacing-l-max: rem(80px); // ratio 10
+
+/**
+ * $ratio is a space unit.
+ * $negative is boolean value true or false. false is by default.
+ * How to use 'su' function.
+ * padding: su(1); it means - padding: 8px;
+ * or
+ * margin: su(5) auto; it means - margin: 40px auto;
+ * or
+ * margin-left: su(6, true); it means - margin-left: -48px;
+ */
+
+// Spacing unit function.
+@function su($ratio: 1, $negative: false) {
+  @if ($negative) {
+    @return -($spacing-xxs * $ratio);
+  }
+
+  @return $spacing-xxs * $ratio;
+}

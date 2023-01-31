@@ -1,0 +1,46 @@
+@mixin table {
+  border-spacing: unset;
+  table-layout: fixed;
+  width: 100%;
+  word-break: break-word;
+
+  thead {
+    th {
+      //background-color: $gn-blue;
+      //color: $white;
+      height: rem(48px);
+      padding: $spacing-xs;
+      text-align: left;
+      text-transform: none;
+
+      a {
+        color: $white;
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      &:nth-child(1) {
+        td {
+          //border-top: rem(1px) solid $grey-dark;
+        }
+      }
+
+      &:nth-child(even) {
+        //background-color: $tan-light;
+      }
+    }
+
+    td {
+      //border-bottom: rem(1px) solid $grey-dark;
+      //border-right: rem(1px) solid $grey-dark;
+      border-top: 0;
+      padding: $spacing-xs;
+
+      &:first-child {
+        //border-left: rem(1px) solid $grey-dark;
+      }
+    }
+  }
+}

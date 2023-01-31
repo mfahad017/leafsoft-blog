@@ -1,0 +1,32 @@
+@mixin button {
+  @include media-bp-min(md) {
+    padding: su(1.5) su(3);
+  }
+
+  @include button-text;
+  @extend %u-animate-button;
+  border-radius: rem(23px);
+  border-style: solid;
+  border-width: rem(2px);
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: su(1) su(2);
+  text-decoration: none;
+  text-overflow: ellipsis;
+  text-transform: none;
+  white-space: nowrap;
+
+  &:disabled {
+    color: $sonic-grey;
+    cursor: not-allowed;
+
+    &:hover,
+    &:focus {
+      box-shadow: none;
+      color: $sonic-grey;
+      text-decoration: none;
+    }
+  }
+}

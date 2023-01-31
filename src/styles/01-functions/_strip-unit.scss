@@ -1,0 +1,10 @@
+/// Strips unit
+/// @example
+///   $length : 42em;
+///   $int    : strip-unit($length); // 42
+/// @param {string} $value
+@function strip-unit($value) {
+  @if valid-unit($value) {
+    @return $value / ($value * 0 + 1);
+  }
+}

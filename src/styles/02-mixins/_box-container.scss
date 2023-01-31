@@ -1,0 +1,13 @@
+@mixin box-container {
+  @include media-bp-min(sm) {
+    padding: su(7) su(10);
+  }
+
+  @include box-shadow;
+  background-color: $white;
+  border-radius: rem(8px);
+  border-style: none;
+  margin: 0 auto;
+  max-width: map-get($breakpoints, sm);
+  padding: su(2);
+}

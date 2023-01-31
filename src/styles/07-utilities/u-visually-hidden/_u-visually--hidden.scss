@@ -1,0 +1,62 @@
+/// Accessible way to hide elements on the page (and show them again)
+///
+/// Use as a mixin (discouraged), class, or @extend (preferred)
+/// @group utility
+/// @example scss - Sass Usage
+///  .my-module {
+///    @extend %u-visually--hidden;
+///   }
+/// @example markup - Html usage
+///  <div class='my-module visually-hidden'>Hide Text</div>
+@mixin visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+
+  .focusable {
+    &:active,
+    &:focus {
+      clip: auto;
+      height: auto;
+      margin: 0;
+      overflow: visible;
+      position: static;
+      width: auto;
+    }
+  }
+}
+
+/// Accessible way to hide elements on the page (and show them again)
+///
+/// Use as a mixin (discouraged), class, or @extend (preferred)
+/// @group utility
+/// @example scss - Sass Usage
+///  .my-module {
+///    @extend %visually-shown;
+///   }
+/// @example markup - Html usage
+///  <div class='my-module visually-shown'>Hide Text</div>
+@mixin visually-shown {
+  clip: auto; // sass-lint:disable-line no-duplicate-properties
+  clip: rect(auto auto auto auto); // sass-lint:disable-line no-duplicate-properties
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+%u-visually--hidden,
+.u-visually--hidden {
+  @include visually-hidden;
+}
+
+%u-visually--shown,
+.u-visually--shown {
+  @include visually-shown;
+}

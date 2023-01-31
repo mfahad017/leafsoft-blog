@@ -1,0 +1,21 @@
+/// Hides text in block elements using text-indent. Useful for accessibility in
+/// Icon links etc.
+///
+/// Use as a mixin (discouraged), class, or @extend (preferred)
+/// @group utility
+/// @example scss - Sass Usage
+///  .my-module {
+///    @extend %u-text-hide;
+///   }
+/// @example markup - Html usage
+///  <div class='my-module u-text-hide'>Hide Text</div>
+@mixin text-hide {
+  overflow: hidden;
+  text-indent: 120%;
+  white-space: nowrap;
+}
+
+%u-text-hide,
+.u-text-hide {
+  @include text-hide;
+}

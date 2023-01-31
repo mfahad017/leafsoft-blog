@@ -1,0 +1,72 @@
+// Animation Helpers
+
+// Animation Extends for CSS transitions
+
+$transition-duration: .35s ease-out;
+
+%u-animate-all {
+  transition: all $transition-duration;
+}
+
+%u-animate-left {
+  transition: left $transition-duration;
+}
+
+%u-animate-left-top {
+  transition: left $transition-duration, top $transition-duration;
+}
+
+%u-animate-right-left {
+  transition: right $transition-duration, left $transition-duration;
+}
+
+%u-animate-right-left-visibility {
+  transition: visibility $transition-duration, right $transition-duration, left $transition-duration;
+}
+
+%u-animate-opacity-visibility {
+  transition: opacity $transition-duration, visibility $transition-duration;
+}
+
+%u-animate-button {
+  transition: background-color $transition-duration, border $transition-duration, color $transition-duration;
+}
+
+%u-animate-button-icon {
+  transition: background-color $transition-duration, transform $transition-duration;
+}
+
+%u-animate-color {
+  transition: color $transition-duration;
+}
+
+%u-animate-transform {
+  transition: transform $transition-duration;
+}
+
+%u-animate-shadow {
+  transition: box-shadow $transition-duration;
+}
+
+%u-animate-background-color {
+  transition: background-color $transition-duration;
+}
+
+%u-animate-width {
+  transition: width $transition-duration;
+}
+
+%u-animate-flex {
+  transition: flex $transition-duration, max-width $transition-duration, padding-bottom $transition-duration, padding-top $transition-duration;
+}
+
+%u-animate-height {
+  transition: height $transition-duration;
+}
+
+body {
+  &.preload * {
+    transition: none !important;
+  }
+}
+

@@ -1,0 +1,7 @@
+@mixin text-link {
+  @extend %u-animate-all;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  padding: 0;
+}

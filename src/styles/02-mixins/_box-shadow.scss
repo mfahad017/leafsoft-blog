@@ -1,0 +1,9 @@
+// Default box-shadow
+
+@mixin box-shadow {
+  box-shadow: 0 0 rem(16px) 0 rgba(0, 0, 0, .08);
+}
+
+@mixin box-shadow-negative {
+  box-shadow: 0 -#{rem(16px)} rem(16px) 0 rgba(0, 0, 0, .16);
+}

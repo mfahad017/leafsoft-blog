@@ -1,0 +1,14 @@
+
+%u-display-on--desktop-only,
+.u-display-on--desktop-only {
+  @include breakpoint(992px) {
+    display: none !important;
+  }
+}
+
+%u-display-on--mobile-only,
+.u-display-on--mobile-only {
+  @include breakpoint(992px) {
+    display: none !important;
+  }
+}

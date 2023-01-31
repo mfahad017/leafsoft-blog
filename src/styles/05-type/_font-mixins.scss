@@ -1,0 +1,55 @@
+// Site font style.
+@mixin sf-style($font-size, $font-family: $ff-montserrat, $font-weight: $fw-regular, $line-height: 1.5, $font-full-size: false) {
+  -webkit-font-smoothing: antialiased;
+  font-family: $font-family;
+  font-size: rem($font-size + 0);
+  font-weight: $font-weight;
+  line-height: $line-height;
+
+  @if $font-full-size {
+    @include media-bp-min(md) {
+      font-size: rem($font-full-size);
+    }
+  }
+}
+
+// Paragraph level mixins
+@mixin paragraph-regular {
+  @include sf-style($font-size: 16px, $font-family: $ff-montserrat, $font-weight: $fw-medium, $line-height: 1.5);
+}
+
+@mixin paragraph-small {
+  @include sf-style($font-size: 14px, $font-family: $ff-montserrat, $font-weight: $fw-medium, $line-height: 1.5);
+}
+
+@mixin paragraph-x-small {
+  @include sf-style($font-size: 12px, $font-family: $ff-montserrat, $font-weight: $fw-medium, $line-height: 1.33);
+}
+
+
+// Heading mixins
+@mixin super-heading {
+  @include sf-style($font-size: 32px, $font-family: $ff-montserrat, $font-weight: $fw-bold, $line-height: 32px);
+}
+
+@mixin heading-1 {
+  @include sf-style($font-size: 20px, $font-family: $ff-montserrat, $font-weight: $fw-bold, $line-height: 1.5);
+}
+
+@mixin heading-2 {
+  @include sf-style($font-size: 18px, $font-family: $ff-montserrat, $font-weight: $fw-medium, $line-height: 1.5);
+}
+
+@mixin heading-3 {
+  @include sf-style($font-size: 16px, $font-family: $ff-montserrat, $font-weight: $fw-bold, $line-height: 1.5);
+}
+
+
+// Buttons & Links mixins
+@mixin button-text {
+  @include sf-style($font-size: 14px, $font-family: $ff-montserrat, $font-weight: $fw-semi-bold, $line-height: 1.14);
+}
+
+@mixin submenu-link {
+  @include sf-style($font-size: 14px, $font-family: $ff-montserrat, $font-weight: $fw-medium, $line-height: 1.14);
+}

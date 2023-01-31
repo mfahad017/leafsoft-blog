@@ -1,0 +1,135 @@
+{
+  "items": [
+    {
+      "name": "$navy",
+      "value": "#223746"
+    },
+    {
+      "name": "$sky",
+      "value": "#005FA4"
+    },
+    {
+      "name": "$gold",
+      "value": "#FCB116"
+    },
+    {
+      "name": "$tan",
+      "value": "#EBD29E"
+    },
+    {
+      "name": "$graphite",
+      "value": "#3C4043"
+    },
+    {
+      "name": "$sonic-grey",
+      "value": "#9B9B9B"
+    },
+    {
+      "name": "$light-grey",
+      "value": "#D7D7D7"
+    },
+    {
+      "name": "$sand",
+      "value": "#F0EFED"
+    },
+    {
+      "name": "$smoke",
+      "value": "#F5F5F5"
+    },
+    {
+      "name": "$white",
+      "value": "#FFFFFF"
+    },
+    {
+      "name": "$light-blue",
+      "value": "#EBF7FF"
+    },
+    {
+      "name": "$success-green",
+      "value": "#1D9F49"
+    },
+    {
+      "name": "$alert-yellow",
+      "value": "#DC9325"
+    },
+    {
+      "name": "$alert-amber",
+      "value": "#AF4525"
+    },
+    {
+      "name": "$a1",
+      "value": "#801641"
+    },
+    {
+      "name": "$a2",
+      "value": "#E4538E"
+    },
+    {
+      "name": "$b1",
+      "value": "#201048"
+    },
+    {
+      "name": "$b2",
+      "value": "#4430A0"
+    },
+    {
+      "name": "$b3",
+      "value": "#744FF5"
+    },
+    {
+      "name": "$b4",
+      "value": "#A293E3"
+    },
+    {
+      "name": "$c1",
+      "value": "#243003"
+    },
+    {
+      "name": "$c2",
+      "value": "#495D0D"
+    },
+    {
+      "name": "$c3",
+      "value": "#93AC21"
+    },
+    {
+      "name": "$c4",
+      "value": "#BDC75E"
+    },
+    {
+      "name": "$d1",
+      "value": "#033A39"
+    },
+    {
+      "name": "$d2",
+      "value": "#11817F"
+    },
+    {
+      "name": "$d3",
+      "value": "#1EBAB7"
+    },
+    {
+      "name": "$d4",
+      "value": "#74D9D6"
+    },
+    {
+      "name": "$e1",
+      "value": "#5A1605"
+    },
+    {
+      "name": "$e2",
+      "value": "#963D0F"
+    },
+    {
+      "name": "$e3",
+      "value": "#D1682B"
+    },
+    {
+      "name": "$e4",
+      "value": "#F99053"
+    }
+  ],
+  "meta": {
+    "description": "To add to these items, use Sass constables that start with <code>$</code> in <code>./components/00-base/core/03-colors/_colors.scss</code>"
+  }
+}

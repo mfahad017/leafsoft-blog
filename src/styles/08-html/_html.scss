@@ -1,0 +1,118 @@
+// HTML / Body
+//
+// Default @viewport for responsive.
+//
+// Default HTML / Body resets. Body has Flex display to allow footer (or main) to scale full height of viewport
+//
+
+// @todo documentation.
+// @url https://timkadlec.com/2012/10/ie10-snap-mode-and-responsive-design/
+// @url https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/7970618/
+
+@viewport {
+  width: device-width;
+}
+
+html {
+  box-sizing: border-box;
+  color: $graphite;
+  font-family: $ff-montserrat;
+  font-size: ($fs-base / 16px) * 100%;
+  font-weight: $fw-medium;
+  height: 100%;
+  line-height: $flh-base;
+
+  &.pl,
+  &.paragraphs-previewer-html {
+    background-color: white;
+  }
+}
+
+// @see https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  height: 100%;
+  // Remove UA default margin.
+  margin: 0;
+
+  &.no-scroll {
+    @include media-bp-max(md) {
+      overflow: hidden;
+    }
+  }
+
+  > .dialog-off-canvas-main-canvas {
+    height: 100%;
+  }
+}
+
+//Custom resets
+
+/**
+ * 1. Remove the gray background on active links in IE 10.
+ * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
+ */
+
+a {
+  -webkit-text-decoration-skip: objects; /* 2 */
+  background-color: transparent; /* 1 */
+  text-decoration: none;
+}
+
+/**
+ * Remove the outline on focused links when they are also active or hovered
+ * in all browsers (opinionated).
+ */
+
+a:active,
+a:hover {
+  outline-width: 0;
+}
+
+// Reset to Default List Style
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+// Reset to block-like list with no padding / margins
+li {
+  list-style-position: none;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+// Title reset, it removes all default padding and margins from headers elements
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0 0 1em 0;
+}
+
+b,
+strong {
+  font-weight: $fw-bold;
+}
+
+figure {
+  margin: 0;
+}
