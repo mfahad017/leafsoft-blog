@@ -1,5 +1,8 @@
-@import 'index.scss';
+@import 'index';
 
 .dashboard {
-  background-color: $gold;
+  background-color: red;
+  display: subgrid;
+
+  @include container;
 }

@@ -1,5 +1,6 @@
 {
-  "cSpell.words": ["leafsoft", "nextjs"],
+  "cSpell.words": ["leafsoft", "nextjs", "stylelint"],
   "typescript.tsdk": "node_modules/typescript/lib",
-  "typescript.enablePromptUseWorkspaceTsdk": true
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "stylelint.validate": ["scss"]
 }
